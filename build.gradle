@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             'com.github.javafaker:javafaker:1.0.2',
             'org.junit.jupiter:junit-jupiter:5.10.1',
             'io.qameta.allure:allure-selenide:2.25.0',
@@ -34,8 +34,19 @@ dependencies {
     )
 }
 
+tasks.withType(Test) {
+    useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
 task full_test(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags("full")
     }
 }
