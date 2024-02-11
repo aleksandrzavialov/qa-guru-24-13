@@ -3,9 +3,11 @@ package tests;
 import data.StudentData;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
 
+@Tag("textbox")
 public class DemoQATextBoxTest extends TestBase {
 
     @Test

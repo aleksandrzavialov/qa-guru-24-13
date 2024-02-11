@@ -4,11 +4,12 @@ import data.StudentData;
 import io.qameta.allure.*;
 import models.Student;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.ResultTableComponent;
 
-
+@Tag("full")
 public class DemoQAFullFormTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     ResultTableComponent resultTable = new ResultTableComponent();
